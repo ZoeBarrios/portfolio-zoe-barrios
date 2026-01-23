@@ -1,7 +1,7 @@
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
-import dashboardImg from '/src/assets/work-related-proyects/dashboard.png'
-import logoWeplay from '/src/assets/weplay/logo.png'
+import dashboardImg from '/work-related-proyects/dashboard.png'
+import logoWeplay from '/weplay/logo.png'
 import { Proyect } from '@/shared/components/Proyect'
 
 export const Proyects = () => {
@@ -31,7 +31,7 @@ export const Proyects = () => {
             id="weplay"
             img={logoWeplay}
             title="Weplay"
-            description=" Aplicación mobile desarrollada con React Native y NestJS, orientada a juegos de
+            description="Aplicación mobile desarrollada con React Native y NestJS, orientada a juegos de
                 cartas sociales en tiempo real."
             imgStyles="h-32 w-full object-cover object-scale-down"
           />

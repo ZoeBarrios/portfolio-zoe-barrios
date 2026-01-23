@@ -21,11 +21,11 @@ const techStack = [
 export const TechList = () => {
   return (
     <div className="space-y-3">
-      <p className="text-sm text-muted-foreground">Tecnologías con las que trabajo habitualmente</p>
+      <p className="text-md text-muted-foreground">Tecnologías con las que trabajo habitualmente</p>
 
       <div className="flex flex-wrap gap-2">
         {techStack.map((tech) => (
-          <Badge key={tech} variant="secondary" className="text-xs px-3 py-1 opacity-80">
+          <Badge key={tech} variant="secondary" className="text-sm px-3 py-1 opacity-80">
             {tech}
           </Badge>
         ))}

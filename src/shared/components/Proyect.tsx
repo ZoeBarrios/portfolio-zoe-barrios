@@ -38,11 +38,11 @@ export const Proyect = ({
         </CardHeader>
 
         <CardContent>
-          <CardDescription>{description}</CardDescription>
+          <CardDescription className="text-md">{description}</CardDescription>
 
           <CardAction>
             <DialogTrigger asChild>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" className="mt-3">
                 Ver proyecto
               </Button>
             </DialogTrigger>

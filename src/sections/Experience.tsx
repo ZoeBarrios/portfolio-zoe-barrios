@@ -26,7 +26,7 @@ export const Experience = () => {
                 </span>
               </CardTitle>
               <CardDescription>
-                <ul className="list-disc list-inside space-y-2 dark:text-white">
+                <ul className="list-disc list-inside space-y-2 text-md dark:text-white">
                   <li>Sistemas de gestión para empresas</li>
                   <li>Aplicaciones móviles</li>
                   <li>Desarrollo frontend y backend</li>
