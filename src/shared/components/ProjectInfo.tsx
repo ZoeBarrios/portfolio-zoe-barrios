@@ -1,14 +1,7 @@
-import {
-  DialogContent,
-  DialogTitle,
-  DialogDescription,
-  Dialog,
-  DialogFooter,
-} from '@/components/ui/dialog'
+import { DialogContent, DialogTitle, DialogDescription, Dialog } from '@/components/ui/dialog'
 import { useState } from 'react'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import { DialogClose } from '@radix-ui/react-dialog'
-import { Button } from '@/components/ui/button'
 export const ProjectInfo = ({
   projectInfo,
 }: {
@@ -58,12 +51,10 @@ export const ProjectInfo = ({
         </Carousel>
 
         <Dialog open={!!openImage} onOpenChange={() => setOpenImage(null)}>
-          <DialogContent className="max-w-5xl w-full bg-foreground/90 p-4">
-            <DialogFooter className="sm:justify-end">
-              <DialogClose asChild>
-                <Button type="button">x</Button>
-              </DialogClose>
-            </DialogFooter>
+          <DialogContent className="max-w-5xl w-full bg-foreground/90 p-4" showCloseButton={false}>
+            <DialogClose className="text-end text-red-400">
+              <span className="sr-only">Cerrar</span>×
+            </DialogClose>
             {openImage && (
               <img
                 src={openImage}
