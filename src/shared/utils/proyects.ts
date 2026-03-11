@@ -3,8 +3,7 @@ export const PROJECTS = [
     id: 'weplay',
     title: 'Weplay',
     description: 'App mobile de juegos de cartas',
-    longDescription: `Aplicación mobile desarrollada con React Native y NestJS. Permite jugar juegos de cartas en tiempo real con amigos mediante sockets. El proyecto permite crear paquetes de cartas personalizados, compartirlos con otros usuarios y jugar distintos modos de juego (en esta primera versión, ¿Quién es más probable?) a través de salas privadas con comunicación en tiempo real mediante sockets.
-`,
+    longDescription: `Aplicación mobile desarrollada con React Native y NestJS. Permite jugar juegos de cartas en tiempo real con amigos mediante sockets. El proyecto permite crear paquetes de cartas personalizados, compartirlos con otros usuarios y jugar distintos modos de juego (en esta primera versión, ¿Quién es más probable?) a través de salas privadas con comunicación en tiempo real mediante sockets.`,
     mainImgPath: '/weplay/',
     imgs: ['login.png', 'main.png', 'play.png'],
     tech: ['React Native', 'NestJS', 'Socket.io', 'MongoDB', 'Docker', 'Google Auth'],
@@ -21,14 +20,34 @@ Trabajo principalmente en el desarrollo de sistemas de gestión web orientados a
     imgs: ['dashboard.png', 'gestion.png', 'app.png'],
     tech: [
       'React Native',
-      'Javascript',
-      'Typescript',
-      'Node',
-      'Mysql',
+      'JavaScript',
+      'TypeScript',
+      'Node.js',
+      'MySQL',
       'React',
-      'Boostrap',
-      'SQL',
+      'Bootstrap',
       'Express',
+    ],
+  },
+
+  {
+    id: 'studyu',
+    title: 'Studyu',
+    description: 'Plataforma web para organización de estudios personales',
+    longDescription: `Aplicación web full-stack desarrollada con React y NestJS orientada a la organización y planificación de estudios personales. Permite gestionar materias, estructurar sesiones de estudio y visualizar el progreso académico.
+La interfaz está construida con TailwindCSS y componentes de shadcn/ui, priorizando una experiencia clara y adaptable. El backend en NestJS expone una API modular encargada de la gestión de usuarios, autenticación y persistencia de datos.
+El sistema incluye autenticación mediante Google Login/Register, manejo de sesiones de usuario y una arquitectura preparada para escalar nuevas funcionalidades relacionadas con planificación académica y seguimiento del aprendizaje.`,
+    mainImgPath: '/studyu/',
+    imgs: ['register.png', 'calendar.png', 'courses.png', 'degrees.png'],
+    tech: [
+      'React',
+      'TypeScript',
+      'NestJS',
+      'TailwindCSS',
+      'shadcn/ui',
+      'Google Auth',
+      'JWT',
+      'Docker',
     ],
   },
 ]

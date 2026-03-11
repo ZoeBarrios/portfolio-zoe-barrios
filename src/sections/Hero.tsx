@@ -31,7 +31,8 @@ export const Hero = () => {
                 <Button text="Proyectos" />
               </a>
 
-              <a href="/BARRIOS_CV.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/BARRIOS_CV.pdf" download target="_blank" rel="noopener noreferrer">
+                {' '}
                 <Button text="Descarga CV" />
               </a>
             </div>

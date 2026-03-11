@@ -3,7 +3,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-  CardAction,
+  CardFooter,
   CardContent,
 } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -31,23 +31,23 @@ export const Proyect = ({
   return (
     <Dialog>
       <Card className={`overflow-hidden transition-all hover:shadow-md ${classStyles}`}>
-        <img src={img} alt={title} className={imgStyles} />
+        <img src={img} alt={title} className={imgStyles} loading="lazy" />
 
-        <CardHeader className="space-y-3">
+        <CardHeader>
           <CardTitle className="text-lg">{title}</CardTitle>
         </CardHeader>
 
         <CardContent>
-          <CardDescription className="text-md">{description}</CardDescription>
-
-          <CardAction>
-            <DialogTrigger asChild>
-              <Button variant="outline" size="sm" className="mt-3">
-                Ver proyecto
-              </Button>
-            </DialogTrigger>
-          </CardAction>
+          <CardDescription className="text-sm">{description}</CardDescription>
         </CardContent>
+
+        <CardFooter>
+          <DialogTrigger asChild>
+            <Button variant="outline" size="sm">
+              Ver proyecto
+            </Button>
+          </DialogTrigger>
+        </CardFooter>
       </Card>
 
       <ProjectInfo projectInfo={projectInfo} />
