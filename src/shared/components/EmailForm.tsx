@@ -51,7 +51,7 @@ export const EmailForm = ({ open }: { open: boolean }) => {
   }
 
   return (
-    <DialogContent className="max-w-md w-xl space-y-6">
+    <DialogContent className="w-md space-y-6">
       <DialogHeader>
         <DialogTitle>Escribime un mensaje</DialogTitle>
         <DialogDescription>

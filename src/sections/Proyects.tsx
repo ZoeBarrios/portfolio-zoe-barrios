@@ -5,7 +5,7 @@ import { Proyect } from '@/shared/components/Proyect'
 
 export const Proyects = () => {
   return (
-    <section id="projects" className="min-h-screen flex items-center justify-center px-4 py-20">
+    <section id="proyects" className="min-h-screen flex items-center justify-center px-4 py-20">
       <div className="w-full max-w-6xl flex flex-col gap-10">
         <div className="text-center space-y-2">
           <h3 className="text-3xl font-semibold tracking-tight">Proyectos</h3>
