@@ -24,14 +24,12 @@ export function ListOfCourses() {
               className="
                 h-28
                 object-contain
-                opacity-60
-                grayscale
-                transition-all
-                duration-100
-                hover:opacity-90
-                hover:grayscale-0
-                hover:border border-secondary-own
-                hover:border-2 rounded
+                rounded-md
+                border
+                shadow-sm
+                transition-transform
+                duration-200
+                hover:scale-105
               "
             />
           </CarouselItem>

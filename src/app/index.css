@@ -11,23 +11,25 @@
   }
 
   :root {
-    --color-main: #fff;
-    --color-text: #fec0b6;
+    /* Day theme: durazno como acento, textos oscuros para buen contraste */
+    --color-main: #fffaf8;
     --color-secondary-own: #fec0b6;
+    --color-on-accent: #4a1f19;
+    --color-text: #44403c;
+    --color-title: #b5473c;
+    --color-usual-text: #1c1917;
     --bg-image: url(/desktop/banner-day.png);
-    --color-title:#fec0b6;
-    --color-usual-text: #fff;
   }
 
   :root.dark {
-    /* Night theme */
-    --color-main: #292929;
-    --color-secondary-own: #9d4edd;
-    --color-text: #9d4edd;
+    /* Night theme: mismo acento durazno sobre fondo oscuro */
+    --color-main: #1c1917;
+    --color-secondary-own: #f5a99b;
+    --color-on-accent: #2a120e;
+    --color-text: #d6d3d1;
+    --color-title: #f8b7aa;
+    --color-usual-text: #fafaf9;
     --bg-image: url(/desktop/banner-night.png);
-    --color-title: #9d4edd;
-    --color-usual-text: white;
-
   }
 
   body::-webkit-scrollbar {
@@ -50,6 +52,7 @@
   --color-title: var(--color-title);
   --color-secondary-own: var(--color-secondary-own);
   --color-usual-text: var(--color-usual-text);
+  --color-on-accent: var(--color-on-accent);
 }
 
 @theme inline {

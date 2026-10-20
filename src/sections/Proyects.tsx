@@ -8,7 +8,7 @@ export const Proyects = () => {
     <section id="proyects" className="min-h-screen flex items-center justify-center px-4 py-20">
       <div className="w-full max-w-6xl flex flex-col gap-10">
         <div className="text-center space-y-2">
-          <h3 className="text-3xl font-semibold tracking-tight">Proyectos</h3>
+          <h3 className="text-title text-3xl lg:text-4xl font-bold tracking-tight">Proyectos</h3>
           <p className="text-muted-foreground max-w-xl mx-auto">
             Una selección de proyectos personales y profesionales que reflejan mi forma de trabajar
             y las tecnologías que utilizo.

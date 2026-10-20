@@ -1,19 +1,22 @@
 import { Badge } from '@/components/ui/badge'
 
 const techStack = [
-  { category: 'Frontend', techs: ['React', 'React Native', 'Tailwind', 'Bootstrap'] },
-  { category: 'Backend', techs: ['Node.js', 'NestJS', 'Express'] },
-  { category: 'Lenguajes', techs: ['TypeScript', 'JavaScript'] },
-  { category: 'Bases de datos', techs: ['MySQL', 'MongoDB'] },
-  { category: 'DevOps / Tools', techs: ['Git', 'Docker', 'Nginx'] },
+  {
+    category: 'Frontend y mobile',
+    techs: ['Angular', 'PrimeNG', 'React', 'React Native', 'Tailwind CSS'],
+  },
+  { category: 'Backend', techs: ['Node.js', 'NestJS', 'Express', 'Socket.io', 'APIs REST'] },
+  { category: 'Lenguajes', techs: ['TypeScript', 'JavaScript', 'HTML', 'CSS'] },
+  { category: 'Bases de datos', techs: ['MySQL', 'SQL Server', 'PostgreSQL', 'MongoDB'] },
+  { category: 'Herramientas', techs: ['Git', 'Docker', 'Nginx', 'PM2', 'NSSM', 'Google Cloud'] },
 ]
 
 export const TechList = () => {
   return (
-    <div className="space-y-3">
-      <p className="text-md text-muted-foreground">Tecnologías con las que trabajo habitualmente</p>
+    <div className="space-y-4">
+      <p className="text-md text-text">Tecnologías con las que trabajo habitualmente</p>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-col gap-4">
         {techStack.map(({ category, techs }) => (
           <div key={category} className="space-y-2">
             <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">

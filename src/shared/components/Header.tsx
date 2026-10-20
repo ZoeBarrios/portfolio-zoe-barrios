@@ -7,7 +7,7 @@ const Header = () => {
     <header className="w-full bg-main/80 backdrop-blur-md text-text px-6 py-4 flex justify-between items-center fixed top-0 z-50 border-b border-text/10">
       <div className="flex items-center">
         <a href="#hero">
-          <span className="text-2xl font-bold text-secondary-own">ZB</span>
+          <span className="text-2xl font-bold text-title">ZB</span>
         </a>
       </div>
 

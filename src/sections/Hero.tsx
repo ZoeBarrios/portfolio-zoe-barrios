@@ -17,12 +17,12 @@ export const Hero = () => {
               <h1 className="text-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
                 ZOE BARRIOS
               </h1>
-              <p className="text-text text-xl sm:text-2xl md:text-3xl font-semibold">
-                Desarrolladora de Software
+              <p className="text-usual-text text-xl sm:text-2xl md:text-3xl font-semibold">
+                Desarrolladora Full Stack
               </p>
-              <p className="text-text text-base sm:text-lg md:text-xl leading-relaxed">
-                Construyo aplicaciones web y móviles utilizadas en entornos reales, con foco en
-                claridad, arquitectura y mantenimiento.
+              <p className="text-text text-base sm:text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0">
+                Desarrollo y mantengo sistemas de gestión web y mobile en entornos productivos, con
+                Angular, React, React Native, Node.js y NestJS.
               </p>
             </div>
 
