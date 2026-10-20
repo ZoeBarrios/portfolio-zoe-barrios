@@ -4,7 +4,7 @@ import { TechList } from '../shared/components/TechList'
 const STATS = [
   { value: '2+', label: 'años de experiencia' },
   { value: '10+', label: 'proyectos entregados' },
-  { value: '9,8', label: 'promedio en la Tecnicatura' },
+  { value: '2', label: 'roles actuales' },
 ]
 
 export const AboutMe = () => {
