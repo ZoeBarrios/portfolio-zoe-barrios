@@ -1,5 +1,5 @@
 import { useTheme } from '@/shared/hooks/useTheme'
-import { Button } from '../shared/components/Button'
+import { LinkButton } from '../shared/components/Button'
 import Header from '../shared/components/Header'
 import MemojiLigth from '/memoji.png'
 import MemojiDark from '/memoji-nigth.png'
@@ -7,48 +7,42 @@ import MemojiDark from '/memoji-nigth.png'
 export const Hero = () => {
   const { theme } = useTheme()
   return (
-    <div className="min-h-screen flex flex-col" id="hero">
+    <section className="flex min-h-screen flex-col" id="hero">
       <Header />
 
-      <div className="flex-1 flex items-center justify-center px-6 sm:px-8 lg:px-16">
-        <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="text-center lg:text-left space-y-6">
-            <div className="space-y-4">
-              <h1 className="text-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-                ZOE BARRIOS
-              </h1>
-              <p className="text-usual-text text-xl sm:text-2xl md:text-3xl font-semibold">
-                Desarrolladora Full Stack
-              </p>
-              <p className="text-text text-base sm:text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Desarrollo y mantengo sistemas de gestión web y mobile en entornos productivos, con
-                Angular, React, React Native, Node.js y NestJS.
-              </p>
-            </div>
+      <div className="flex flex-1 items-center px-6 pt-28 pb-16">
+        <div className="mx-auto grid w-full max-w-5xl grid-cols-1 items-center gap-14 lg:grid-cols-[1.4fr_1fr]">
+          <div className="space-y-8 text-center lg:text-left">
+            <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              Desarrolladora Full Stack
+            </p>
+            <h1 className="font-display font-semibold text-5xl leading-none tracking-tight sm:text-6xl lg:text-7xl">
+              Zoe Barrios
+            </h1>
+            <p className="mx-auto max-w-lg text-lg leading-relaxed text-muted-foreground lg:mx-0">
+              Desarrollo y mantengo sistemas de gestión web y mobile en entornos productivos, con
+              Angular, React, React Native, Node.js y NestJS.
+            </p>
 
-            <div className="flex flex-col justify-center items-center sm:flex-row gap-4 lg:justify-start">
-              <a href="#proyects">
-                <Button text="Proyectos" />
-              </a>
-
-              <a href="/BARRIOS_CV.pdf" download target="_blank" rel="noopener noreferrer">
-                {' '}
-                <Button text="Descarga CV" />
-              </a>
+            <div className="flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+              <LinkButton href="#proyects">Ver proyectos</LinkButton>
+              <LinkButton href="/BARRIOS_CV.pdf" variant="outline" download>
+                Descargar CV
+              </LinkButton>
             </div>
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full border-4 border-secondary-own overflow-hidden flex items-center justify-center bg-secondary-own backdrop-blur-sm shadow-2xl">
+            <div className="h-56 w-56 overflow-hidden rounded-full bg-brand ring-2 ring-brand/40 ring-offset-8 ring-offset-background sm:h-72 sm:w-72 lg:h-80 lg:w-80">
               <img
                 src={theme === 'dark' ? MemojiDark : MemojiLigth}
                 alt="Memoji de Zoe Barrios"
-                className="w-full h-full object-cover mask-x-from-70% mask-x-to-90% dark:mask-none"
+                className="h-full w-full object-cover"
               />
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

@@ -69,11 +69,7 @@ export const EmailForm = ({ open }: { open: boolean }) => {
         <Textarea name="message" placeholder="Mensaje" rows={4} />
         {errors.message && <p className="text-xs text-red-500">{errors.message}</p>}
 
-        <Button
-          type="submit"
-          disabled={loading}
-          className="w-full bg-secondary-own text-on-accent hover:bg-secondary-own/85"
-        >
+        <Button type="submit" disabled={loading} className="w-full cursor-pointer rounded-full">
           {loading ? 'Enviando…' : 'Enviar mensaje'}
         </Button>
 

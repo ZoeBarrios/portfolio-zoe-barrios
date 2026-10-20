@@ -1,5 +1,3 @@
-import { Badge } from '@/components/ui/badge'
-
 const techStack = [
   {
     category: 'Frontend y mobile',
@@ -13,25 +11,16 @@ const techStack = [
 
 export const TechList = () => {
   return (
-    <div className="space-y-4">
-      <p className="text-md text-text">Tecnologías con las que trabajo habitualmente</p>
-
-      <div className="flex flex-col gap-4">
+    <div className="space-y-5">
+      <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Tecnologías</p>
+      <dl className="divide-y divide-border border-y border-border">
         {techStack.map(({ category, techs }) => (
-          <div key={category} className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              {category}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {techs.map((tech) => (
-                <Badge key={tech} variant="secondary" className="text-sm px-3 py-1">
-                  {tech}
-                </Badge>
-              ))}
-            </div>
+          <div key={category} className="grid grid-cols-[8.5rem_1fr] gap-4 py-4">
+            <dt className="text-sm text-muted-foreground">{category}</dt>
+            <dd className="text-sm leading-relaxed">{techs.join(' · ')}</dd>
           </div>
         ))}
-      </div>
+      </dl>
     </div>
   )
 }

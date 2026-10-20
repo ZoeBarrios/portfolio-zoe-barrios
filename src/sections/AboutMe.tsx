@@ -1,14 +1,21 @@
+import { SectionHeader } from '@/shared/components/SectionHeader'
 import { TechList } from '../shared/components/TechList'
+
+const STATS = [
+  { value: '2+', label: 'años de experiencia' },
+  { value: '10+', label: 'proyectos entregados' },
+  { value: '9,8', label: 'promedio en la Tecnicatura' },
+]
 
 export const AboutMe = () => {
   return (
-    <section id="about" className="min-h-screen flex items-center py-20">
-      <div className="w-full max-w-6xl mx-auto px-6">
-        <h2 className="text-title text-3xl lg:text-4xl font-bold tracking-tight mb-16">Sobre mí</h2>
+    <section id="about" className="px-6 py-24 md:py-32">
+      <div className="mx-auto max-w-5xl">
+        <SectionHeader index="01" title="Sobre mí" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-          <div className="flex flex-col gap-10">
-            <div className="space-y-4 text-base lg:text-lg leading-relaxed text-text">
+        <div className="grid grid-cols-1 items-start gap-16 md:grid-cols-2">
+          <div className="flex flex-col gap-12">
+            <div className="space-y-5 text-lg leading-relaxed text-foreground/85">
               <p>
                 Desarrolladora full stack con más de dos años de experiencia en el desarrollo y
                 mantenimiento de sistemas de gestión en entornos productivos. Técnica Universitaria
@@ -22,31 +29,17 @@ export const AboutMe = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-6 pt-2 border-t border-border">
-              <div className="flex flex-col gap-2 pt-6">
-                <span className="text-4xl lg:text-5xl font-bold text-title">2+</span>
-                <span className="text-sm text-muted-foreground leading-tight">
-                  años de experiencia
-                </span>
-              </div>
-              <div className="flex flex-col gap-2 pt-6">
-                <span className="text-4xl lg:text-5xl font-bold text-title">10+</span>
-                <span className="text-sm text-muted-foreground leading-tight">
-                  proyectos entregados
-                </span>
-              </div>
-              <div className="flex flex-col gap-2 pt-6">
-                <span className="text-4xl lg:text-5xl font-bold text-title">9,8</span>
-                <span className="text-sm text-muted-foreground leading-tight">
-                  promedio en la Tecnicatura
-                </span>
-              </div>
-            </div>
+            <dl className="grid grid-cols-3 gap-6 border-t border-border pt-8">
+              {STATS.map(({ value, label }) => (
+                <div key={label} className="flex flex-col gap-2">
+                  <dt className="order-2 text-sm leading-tight text-muted-foreground">{label}</dt>
+                  <dd className="order-1 font-display font-semibold text-5xl">{value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
-          <div className="flex items-start">
-            <TechList />
-          </div>
+          <TechList />
         </div>
       </div>
     </section>

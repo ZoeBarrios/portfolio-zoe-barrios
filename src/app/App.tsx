@@ -9,14 +9,14 @@ import { Footer } from '@/sections/Footer'
 function App() {
   return (
     <ThemeProvider>
-      <div className=" [background-image:var(--bg-image)] bg-cover bg-center bg-no-repeat">
+      <main>
         <Hero />
         <AboutMe />
         <Experience />
         <Proyects />
         <ContactMe />
         <Footer />
-      </div>
+      </main>
     </ThemeProvider>
   )
 }

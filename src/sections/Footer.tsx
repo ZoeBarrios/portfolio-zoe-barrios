@@ -1,10 +1,9 @@
 export const Footer = () => {
   return (
-    <footer className="w-full bg-secondary-own py-6">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
-        <p className="text-xs text-on-accent">© {new Date().getFullYear()} Zoe Barrios</p>
-
-        <p className="text-xs text-on-accent">Construido con React, Tailwind y TypeScript</p>
+    <footer className="border-t border-border">
+      <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 px-6 py-8 text-xs text-muted-foreground sm:flex-row">
+        <p>© {new Date().getFullYear()} Zoe Barrios</p>
+        <p>Construido con React, Tailwind y TypeScript</p>
       </div>
     </footer>
   )

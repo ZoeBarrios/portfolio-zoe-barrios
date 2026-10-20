@@ -1,47 +1,43 @@
+import { Moon, Sun } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme'
+
+const LINKS = [
+  { href: '#about', label: 'Sobre mí' },
+  { href: '#experience', label: 'Experiencia' },
+  { href: '#proyects', label: 'Proyectos' },
+  { href: '#contact', label: 'Contacto' },
+]
 
 const Header = () => {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <header className="w-full bg-main/80 backdrop-blur-md text-text px-6 py-4 flex justify-between items-center fixed top-0 z-50 border-b border-text/10">
-      <div className="flex items-center">
-        <a href="#hero">
-          <span className="text-2xl font-bold text-title">ZB</span>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
+        <a href="#hero" className="font-display text-lg font-semibold tracking-tight">
+          Zoe Barrios
         </a>
-      </div>
 
-      <nav className="hidden md:block">
-        <ul className="flex flex-row gap-8 lg:gap-10">
-          <li className="cursor-pointer hover:text-secondary-own transition-colors duration-200 font-medium">
-            <a href="#about">Sobre mí</a>
-          </li>
-          <li className="cursor-pointer hover:text-secondary-own transition-colors duration-200 font-medium">
-            <a href="#experience">Experiencia</a>
-          </li>
-          <li className="cursor-pointer hover:text-secondary-own transition-colors duration-200 font-medium">
-            <a href="#proyects">Proyectos</a>
-          </li>
-          <li className="cursor-pointer hover:text-secondary-own transition-colors duration-200 font-medium">
-            <a href="#contact">Contacto</a>
-          </li>
-        </ul>
-      </nav>
+        <nav className="hidden md:block">
+          <ul className="flex gap-8 text-sm text-muted-foreground">
+            {LINKS.map(({ href, label }) => (
+              <li key={href}>
+                <a href={href} className="transition-colors hover:text-foreground">
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-      <button
-        onClick={toggleTheme}
-        style={{ cursor: 'pointer' }}
-        className="relative w-14 h-7 bg-text/20 hover:bg-text/30 rounded-full p-1 transition-all duration-300 ease-in-out"
-        aria-label="Toggle theme"
-      >
-        <div
-          className={`absolute top-1 w-5 h-5 bg-secondary-own rounded-full shadow-md transform transition-transform duration-300 ease-in-out flex items-center justify-center ${
-            theme === 'dark' ? 'translate-x-7' : 'translate-x-0'
-          }`}
+        <button
+          onClick={toggleTheme}
+          className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+          aria-label={theme === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro'}
         >
-          <span className="text-xs">{theme === 'light' ? '☀️' : '🌙'}</span>
-        </div>
-      </button>
+          {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+        </button>
+      </div>
     </header>
   )
 }

@@ -1,5 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { ListOfCourses } from '@/shared/components/ListOfCourses'
+import { SectionHeader } from '@/shared/components/SectionHeader'
 
 type Role = {
   title: string
@@ -76,88 +75,85 @@ const COURSES = [
   'Inglés B1.1 (MCER) · Centro Universitario de Idiomas (CUI-UBA), 2023',
 ]
 
-const RoleCard = ({ role }: { role: Role }) => (
-  <Card className="border-l-4 border-l-secondary-own transition-all hover:shadow-md">
-    <CardHeader className="gap-1">
-      <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-        <CardTitle className="text-lg">{role.title}</CardTitle>
-        <span className="text-xs font-semibold uppercase tracking-wide text-title whitespace-nowrap">
-          {role.period}
-        </span>
-      </div>
-      <p className="text-sm text-muted-foreground">{role.place}</p>
-    </CardHeader>
-    <CardContent>
-      <ul className="list-disc pl-5 space-y-1.5 text-sm text-text marker:text-secondary-own">
-        {role.items.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-    </CardContent>
-  </Card>
+const Timeline = ({ roles }: { roles: Role[] }) => (
+  <ol className="border-t border-border">
+    {roles.map((role) => (
+      <li
+        key={role.title}
+        className="grid grid-cols-1 gap-2 border-b border-border py-8 md:grid-cols-[11rem_1fr] md:gap-10"
+      >
+        <p className="text-sm text-muted-foreground tabular-nums md:pt-1">{role.period}</p>
+        <div className="space-y-3">
+          <div>
+            <h3 className="text-lg font-medium">{role.title}</h3>
+            <p className="text-sm text-muted-foreground">{role.place}</p>
+          </div>
+          <ul className="space-y-2 text-[15px] leading-relaxed text-foreground/80">
+            {role.items.map((item) => (
+              <li key={item} className="flex gap-3">
+                <span className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </li>
+    ))}
+  </ol>
+)
+
+const SubTitle = ({ children }: { children: string }) => (
+  <h3 className="mb-6 font-display font-semibold text-3xl tracking-tight">{children}</h3>
 )
 
 export const Experience = () => {
   return (
-    <section
-      id="experience"
-      className="min-h-screen flex flex-col items-center justify-center px-4 gap-16 py-20"
-    >
-      <div className="w-full max-w-5xl flex flex-col gap-10">
-        <div className="text-center space-y-2">
-          <h3 className="text-title text-3xl lg:text-4xl font-bold tracking-tight">
-            Experiencia Profesional
-          </h3>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            Desarrollo de sistemas en producción para empresas y para la universidad.
-          </p>
+    <section id="experience" className="px-6 py-24 md:py-32">
+      <div className="mx-auto flex max-w-5xl flex-col gap-24">
+        <div>
+          <SectionHeader
+            index="02"
+            title="Experiencia"
+            description="Desarrollo de sistemas en producción para empresas y para la universidad."
+          />
+          <Timeline roles={WORK} />
         </div>
 
-        <div className="flex flex-col gap-6">
-          {WORK.map((role) => (
-            <RoleCard key={role.title} role={role} />
-          ))}
-        </div>
-      </div>
-
-      <div className="w-full max-w-5xl flex flex-col gap-6">
-        <h4 className="text-2xl font-semibold tracking-tight text-usual-text">
-          Experiencia docente
-        </h4>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {TEACHING.map((role) => (
-            <RoleCard key={role.title} role={role} />
-          ))}
-        </div>
-      </div>
-
-      <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div className="flex flex-col gap-4">
-          <h4 className="text-2xl font-semibold tracking-tight text-usual-text">Formación</h4>
-          {EDUCATION.map((e) => (
-            <div key={e.title} className="border-l-4 border-secondary-own pl-4">
-              <p className="font-semibold text-usual-text">{e.title}</p>
-              <p className="text-sm text-muted-foreground">
-                {e.place} · {e.period}
-              </p>
-            </div>
-          ))}
+        <div>
+          <SubTitle>Docencia</SubTitle>
+          <Timeline roles={TEACHING} />
         </div>
 
-        <div className="flex flex-col gap-4">
-          <h4 className="text-2xl font-semibold tracking-tight text-usual-text">
-            Cursos y certificaciones
-          </h4>
-          <ul className="list-disc pl-5 space-y-2 text-sm text-text marker:text-secondary-own">
-            {COURSES.map((c) => (
-              <li key={c}>{c}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
+        <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
+          <div>
+            <SubTitle>Formación</SubTitle>
+            <ul className="divide-y divide-border border-y border-border">
+              {EDUCATION.map((e) => (
+                <li key={e.title} className="space-y-1 py-5">
+                  <p className="font-medium">{e.title}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {e.place} · {e.period}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-      <div className="w-full max-w-6xl">
-        <ListOfCourses />
+          <div>
+            <SubTitle>Cursos y certificaciones</SubTitle>
+            <ul className="divide-y divide-border border-y border-border">
+              {COURSES.map((c) => {
+                const [name, source] = c.split(' · ')
+                return (
+                  <li key={c} className="space-y-1 py-4">
+                    <p className="text-[15px]">{name}</p>
+                    <p className="text-sm text-muted-foreground">{source}</p>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   )

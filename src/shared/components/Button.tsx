@@ -1,15 +1,28 @@
-export const Button = ({ onclick, text }: { onclick?: () => void; text: string }) => {
+import type { ReactNode } from 'react'
+
+const VARIANTS = {
+  primary: 'bg-primary text-primary-foreground hover:bg-primary/85 shadow-sm',
+  outline: 'border border-foreground/20 text-foreground hover:bg-foreground/5',
+}
+
+export const LinkButton = ({
+  href,
+  children,
+  variant = 'primary',
+  download,
+}: {
+  href: string
+  children: ReactNode
+  variant?: keyof typeof VARIANTS
+  download?: boolean
+}) => {
   return (
-    <button
-      onClick={onclick}
-      style={{ cursor: 'pointer' }}
-      className="text-on-accent bg-secondary-own px-6 py-3 rounded-lg min-w-40 font-medium
-                 hover:scale-105 hover:shadow-lg 
-                 active:scale-95
-                 transition-all duration-200 ease-in-out
-                 focus:outline-none focus:ring-2 focus:ring-secondary-own focus:ring-offset-2"
+    <a
+      href={href}
+      download={download}
+      className={`inline-flex items-center justify-center gap-2 rounded-full px-6 h-11 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${VARIANTS[variant]}`}
     >
-      {text}
-    </button>
+      {children}
+    </a>
   )
 }
