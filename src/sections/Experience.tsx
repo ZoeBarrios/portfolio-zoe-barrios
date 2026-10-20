@@ -65,14 +65,11 @@ const EDUCATION = [
     place: 'UTN San Nicolás · Promedio 9,8',
     period: '2022 – 2024',
   },
-]
-
-const COURSES = [
-  'Nest: desarrollo backend escalable con Node · Udemy (DevTalles), 2025',
-  'React Native CLI: aplicaciones nativas para iOS y Android · Udemy (DevTalles), 2025',
-  'Docker: guía práctica de uso para desarrolladores · Udemy (DevTalles), 2026',
-  'Formación SQL con MySQL · Alura Latam (Oracle Next Education), 2023',
-  'Inglés B1.1 (MCER) · Centro Universitario de Idiomas (CUI-UBA), 2023',
+  {
+    title: 'Inglés B1',
+    place: 'Certificado por el Centro Universitario de Idiomas (CUI-UBA)',
+    period: '2023',
+  },
 ]
 
 const Timeline = ({ roles }: { roles: Role[] }) => (
@@ -124,35 +121,22 @@ export const Experience = () => {
           <Timeline roles={TEACHING} />
         </div>
 
-        <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
-          <div>
-            <SubTitle>Formación</SubTitle>
-            <ul className="divide-y divide-border border-y border-border">
-              {EDUCATION.map((e) => (
-                <li key={e.title} className="space-y-1 py-5">
-                  <p className="font-medium">{e.title}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {e.place} · {e.period}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <SubTitle>Cursos y certificaciones</SubTitle>
-            <ul className="divide-y divide-border border-y border-border">
-              {COURSES.map((c) => {
-                const [name, source] = c.split(' · ')
-                return (
-                  <li key={c} className="space-y-1 py-4">
-                    <p className="text-[15px]">{name}</p>
-                    <p className="text-sm text-muted-foreground">{source}</p>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
+        <div>
+          <SubTitle>Formación</SubTitle>
+          <ol className="border-t border-border">
+            {EDUCATION.map((e) => (
+              <li
+                key={e.title}
+                className="grid grid-cols-1 gap-2 border-b border-border py-6 md:grid-cols-[11rem_1fr] md:gap-10"
+              >
+                <p className="text-sm text-muted-foreground tabular-nums md:pt-0.5">{e.period}</p>
+                <div>
+                  <h4 className="text-lg font-medium">{e.title}</h4>
+                  <p className="text-sm text-muted-foreground">{e.place}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </section>
